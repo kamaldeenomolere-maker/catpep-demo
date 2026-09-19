@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Catpep Peppersoup & More | FUTA West Gate, Akure</title>
+<meta name="description" content="Catpep Peppersoup & More — authentic Nigerian pepper soup at FUTA West Gate, Akure.">
+<meta name="theme-color" content="#070807">
+<style>
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Playfair+Display:ital,wght@0,600;0,700;1,600;1,700&display=swap');
+
+:root{--gold:#f5a817;--bg:#070807;--panel:#0e100e;--muted:#999b96;--line:#252823;--white:#f8f6f1}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--white);font-family:"DM Sans",Arial,sans-serif}
+a{text-decoration:none;color:inherit}
+button{font:inherit;cursor:pointer}
+.shell{width:min(1200px,calc(100% - 48px));margin:auto}
+
+/* Header */
+header{position:fixed;z-index:50;top:0;left:0;right:0;min-height:78px;padding:12px max(20px,calc((100vw - 1360px)/2));display:flex;align-items:center;justify-content:space-between;gap:25px;background:rgba(5,6,6,.86);border-bottom:1px solid #222520;backdrop-filter:blur(16px)}
+.logo{display:flex;align-items:center;gap:5px;min-width:190px}
+.logo .pepper{font-size:25px}
+.logo strong{display:block;color:var(--gold);font:italic 700 30px/1 "Playfair Display",serif}
+.logo small{display:block;margin-top:5px;font-size:8px;font-weight:800;letter-spacing:1.4px}
+nav{display:flex;align-items:center;gap:8px}
+nav button{position:relative;border:0;background:none;color:#e8e6df;padding:15px 17px;font-weight:700}
+nav button:after{content:"";position:absolute;left:17px;right:17px;bottom:5px;height:2px;background:var(--gold);transform:scaleX(0);transform-origin:left;transition:.2s}
+nav button:hover,nav button.active{color:var(--gold)}
+nav button:hover:after,nav button.active:after{transform:scaleX(1)}
+.actions{display:flex;align-items:center;gap:10px}
+.call,.primary{border:0;border-radius:999px;background:var(--gold);color:#10100d;padding:14px 20px;font-weight:800;display:inline-flex;align-items:center;gap:9px;transition:.2s}
+.call:hover,.primary:hover{transform:translateY(-2px);background:#ffbb38}
+.menu-toggle{display:none;width:46px;height:46px;border-radius:50%;border:1px solid #383b35;background:transparent;color:var(--gold);font-size:20px}
+
+/* Hero */
+.hero{position:relative;min-height:790px;display:flex;align-items:center;overflow:hidden;padding:145px max(24px,calc((100vw - 1200px)/2)) 90px;background:
+linear-gradient(90deg,#050605 0%,rgba(5,6,5,.96) 37%,rgba(5,6,5,.50) 67%,rgba(5,6,5,.82) 100%),
+radial-gradient(ellipse at 78% 48%,#9c6c22,#3b2d13 28%,#11130f 57%,#050605 82%)}
+.hero:after{content:"";position:absolute;z-index:0;right:-4%;top:110px;width:58%;height:610px;border-radius:35px;opacity:.82;
+background:
+radial-gradient(ellipse at 18% 20%,#79602e 0 11%,transparent 12%),
+radial-gradient(ellipse at 52% 33%,#b18130 0 12%,transparent 13%),
+radial-gradient(ellipse at 78% 18%,#65502b 0 10%,transparent 11%),
+radial-gradient(ellipse at 38% 72%,#5c4722 0 15%,transparent 16%),
+radial-gradient(ellipse at 76% 72%,#87682e 0 14%,transparent 15%),
+linear-gradient(120deg,#171a15,#8d6522 45%,#272a22 72%,#0c0e0b);
+box-shadow:inset 0 0 100px #050605;transform:perspective(700px) rotateY(-5deg)}
+.hero:before{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 70%,#070807);z-index:1}
+.hero-content{position:relative;z-index:2;max-width:690px}
+.eyebrow{display:inline-flex;align-items:center;gap:8px;border:1px solid var(--gold);border-radius:999px;padding:9px 15px;color:#f7b72b;font-size:14px;font-weight:700;background:#080906aa}
+.kicker{font-size:58px;line-height:.9;font-weight:800;letter-spacing:-3px;margin:32px 0 -4px}
+h1{font-size:clamp(50px,6vw,82px);line-height:.98;letter-spacing:-4px;margin:0}
+.gold{color:var(--gold)}
+.hero-copy{max-width:570px;color:#d1d0cb;font-size:18px;line-height:1.55;margin:24px 0 30px}
+.features{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin:28px 0}
+.feature{display:flex;flex-direction:column;gap:8px;color:var(--gold)}
+.feature b{font-size:13px;color:#f7f5ef}
+.feature span{font-size:11px;color:#999b96;line-height:1.3}
+.hero-actions{display:flex;flex-wrap:wrap;gap:12px}
+.outline{display:inline-flex;align-items:center;justify-content:center;gap:9px;padding:13px 20px;border:1px solid var(--gold);border-radius:999px;color:#fff;background:#07080755;font-weight:700;transition:.2s}
+.outline:hover{background:#f5a81718;transform:translateY(-2px)}
+.hero-note{position:absolute;z-index:3;right:5%;top:21%;max-width:150px;text-align:center;transform:rotate(-6deg);font:italic 25px/1.08 "Playfair Display",serif}
+.hero-note span{display:block}.arrow{font:42px/1 Arial;color:var(--gold);transform:rotate(15deg);margin-top:12px}
+
+/* General */
+section{scroll-margin-top:80px}
+.menu-section{padding:105px 0 115px}
+.heading{display:flex;justify-content:space-between;align-items:end;gap:30px;margin-bottom:35px}
+.line{width:42px;height:3px;background:var(--gold);margin-bottom:14px}
+.label{margin:0 0 9px;color:var(--gold);font-size:12px;font-weight:800;letter-spacing:2px}
+.heading h2,.about h2,.location h2,.contact h2{font-size:clamp(34px,4vw,52px);line-height:1.04;letter-spacing:-2px;margin:0}
+.heading p:last-child,.about-copy>p,.location p,.contact p{color:var(--muted);line-height:1.65}
+.text-link{color:var(--gold);font-weight:700}
+.cards{display:grid;grid-template-columns:repeat(4,1fr);gap:17px}
+.card{border:1px solid var(--line);border-radius:16px;overflow:hidden;background:#0d0f0e;transition:.25s}
+.card:hover{transform:translateY(-6px);border-color:var(--gold)}
+.food-img{height:175px;position:relative;background:linear-gradient(145deg,#332b1b,#a97422 48%,#27251b);overflow:hidden}
+.food-img:before{content:"";position:absolute;width:150px;height:90px;left:12%;top:22%;border-radius:50%;background:#66502a;box-shadow:105px 20px 0 #42371f,200px -8px 0 #84652b;transform:rotate(-12deg)}
+.food-img:after{content:"";position:absolute;width:220px;height:55px;left:5%;bottom:12%;border-radius:50%;background:#d18b24aa;transform:rotate(9deg)}
+.food-img:nth-child(1){}
+.badge{position:absolute;z-index:2;left:12px;top:12px;padding:6px 9px;border-radius:999px;background:#0009;color:var(--gold);font-size:10px;font-weight:800}
+.card-body{position:relative;min-height:175px;padding:19px}
+.num{color:var(--gold);font-size:11px;font-weight:800;letter-spacing:1px;margin:0 0 8px}
+.card h3{font-size:18px;line-height:1.2;margin:0 40px 9px 0}
+.card p{color:#8f928c;font-size:13px;line-height:1.45;margin:0}
+.card button{position:absolute;right:17px;bottom:17px;width:37px;height:37px;border:1px solid var(--gold);border-radius:50%;background:none;color:var(--gold);font-size:19px}
+
+/* About */
+.about{border-block:1px solid #1b1d1b;background:#0c0e0d}
+.about-inner{display:grid;grid-template-columns:1.35fr .65fr;gap:70px;align-items:center;padding:105px 0}
+.about-copy>p{max-width:680px;font-size:17px}
+.stats{display:flex;gap:45px;margin-top:35px}
+.stats b{display:block;color:var(--gold);font-size:22px}.stats span{display:block;color:#c6c7c2;font-size:12px;margin-top:4px}
+.quote{padding:40px;border:1px solid #33352f;border-radius:24px;background:radial-gradient(circle at 70% 20%,#f5a81725,transparent 40%),#111310}
+.quote .big{font-size:34px}.quote p{font:italic 700 31px/1.15 "Playfair Display",serif}.quote small{color:#7f827b}
+
+/* Location */
+.location-section{padding:100px 0}
+.location-card{display:grid;grid-template-columns:.8fr 1.2fr;min-height:430px;border:1px solid #282a26;border-radius:24px;overflow:hidden;background:#0e100e}
+.location-copy{padding:50px;display:flex;flex-direction:column;justify-content:center;align-items:flex-start}
+.map{position:relative;min-height:430px;overflow:hidden;background:#d8d7ce;
+background-image:linear-gradient(25deg,transparent 46%,#fff 47% 49%,transparent 50%),linear-gradient(120deg,transparent 42%,#fff 43% 46%,transparent 47%),linear-gradient(80deg,transparent 70%,#fff 71% 73%,transparent 74%);
+background-size:170px 130px,220px 160px,180px 190px}
+.road{position:absolute;height:25px;background:#f5f4ea;border-block:1px solid #c5c4bb}.r1{width:120%;left:-10%;top:45%;transform:rotate(-23deg)}.r2{width:100%;left:7%;top:62%;transform:rotate(34deg)}
+.pin{position:absolute;left:55%;top:41%;font-size:40px;color:#e43b2f;filter:drop-shadow(0 3px 4px #0003)}
+.map-label,.campus{position:absolute;padding:8px 11px;border-radius:8px;background:#ffffffe8;color:#2f3531;font-size:13px;font-weight:800;box-shadow:0 3px 15px #0002}
+.map-label{left:60%;top:34%}.map-label small{color:#777;font-weight:500}.campus{right:7%;bottom:13%;font-size:11px;font-weight:600}
+
+/* Contact/Footer */
+.contact{background:var(--gold);color:#11110e;padding:85px 0}
+.contact-inner{display:flex;align-items:center;justify-content:space-between;gap:40px}
+.contact .label{color:#5e4106}.contact p{max-width:650px;color:#4d3a0e}
+.contact-actions{display:flex;gap:10px;flex-wrap:wrap}.contact .primary{background:#0b0d0c;color:#fff}.contact .outline{color:#0b0d0c;border-color:#0b0d0c}
+footer{border-top:1px solid #1e201d;background:#070807;padding:30px 0}
+.footer-inner{display:flex;align-items:center;justify-content:space-between;gap:25px}
+.footer-item{display:flex;gap:10px;color:var(--gold)}.footer-item strong,.footer-item small{display:block}.footer-item strong{font-size:12px;color:#eee}.footer-item small{font-size:11px;color:#777b75;margin-top:3px}
+.footer-link{color:var(--gold);font-size:12px;font-weight:700}
+
+
+/* Restaurant quick actions + mobile-first menu */
+.quick-actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:18px}
+.whatsapp{background:#25D366!important;color:#071108!important;border-color:#25D366!important}
+.phone{background:#11130f!important;color:#fff!important;border-color:#f5a817!important}
+.hours{margin-top:24px;border-top:1px solid #282b25;padding-top:18px;width:100%;max-width:340px}
+.hours-title{color:var(--gold);font-size:12px;font-weight:800;letter-spacing:1.5px;text-transform:uppercase;margin-bottom:10px}
+.hours-row{display:flex;justify-content:space-between;gap:20px;color:#c9cbc4;font-size:13px;padding:5px 0}
+.hours-row span:last-child{color:#fff;font-weight:700}
+.mobile-order-bar{display:none}
+
+/* Mobile */
+@media(max-width:980px){
+ nav{display:none;position:absolute;left:18px;right:18px;top:72px;flex-direction:column;align-items:stretch;padding:10px;border:1px solid #292c27;border-radius:18px;background:#090a09f7;box-shadow:0 20px 50px #0008}
+ nav.open{display:flex}.nav-link{text-align:left}
+ .menu-toggle{display:block}.call{padding:11px 15px;font-size:12px}
+ .hero:after{width:70%;opacity:.55}.hero-note{display:none}
+ .cards{grid-template-columns:repeat(2,1fr)}.location-card{grid-template-columns:1fr}
+}
+@media(max-width:640px){
+ .shell{width:calc(100% - 30px)}
+ header{min-height:68px;padding-inline:15px}.logo{min-width:0}.logo strong{font-size:25px}.logo small{font-size:7px}.logo .pepper{font-size:20px}
+ .hero{min-height:760px;padding:120px 15px 60px;align-items:end}.hero:after{right:-40%;top:115px;width:115%;height:480px;opacity:.35}
+ .kicker{font-size:42px;margin-top:25px}h1{font-size:clamp(42px,13vw,62px);letter-spacing:-2.5px}.hero-copy{font-size:15px}
+ .features{grid-template-columns:repeat(2,1fr);gap:20px 10px}.hero-actions{flex-direction:column}.primary,.outline{width:100%}
+ .menu-section,.location-section{padding:72px 0}.heading{display:block}.text-link{display:inline-block;margin-top:18px}.cards{grid-template-columns:1fr}
+ .food-img{height:190px}.about-inner{grid-template-columns:1fr;gap:35px;padding:75px 0}.stats{gap:20px;justify-content:space-between}.quote{padding:28px}
+ .location-copy{padding:35px 25px}.map{min-height:330px}.contact-inner{display:block}.contact-actions{margin-top:25px}
+ .footer-inner{display:grid;grid-template-columns:1fr 1fr}.footer-link{grid-column:1/-1}
+}
+
+@media(max-width:640px){
+ .mobile-order-bar{position:fixed;z-index:45;display:grid;grid-template-columns:1fr 1fr;gap:8px;left:10px;right:10px;bottom:10px;padding:8px;border:1px solid #30332d;border-radius:17px;background:#090a09ee;backdrop-filter:blur(14px);box-shadow:0 12px 35px #0009}
+ .mobile-order-bar a{display:flex;align-items:center;justify-content:center;gap:7px;border-radius:11px;padding:12px 8px;font-size:13px;font-weight:800}
+ .mobile-order-bar .wa{background:#25D366;color:#071108}
+ .mobile-order-bar .callnow{background:var(--gold);color:#11110e}
+ body{padding-bottom:78px}
+ .quick-actions{display:grid;grid-template-columns:1fr 1fr;width:100%}
+ .quick-actions a{width:100%}
+ .hours-row{font-size:12px}
+}
+
+</style>
+</head>
+<body>
+
+<header>
+  <a class="logo" href="#home"><span class="pepper">🌶️</span><span><strong>Catpep</strong><small>PEPPERSOUP & MORE</small></span><span>🔥</span></a>
+  <nav id="nav">
+    <button class="active" onclick="go('home')">Home</button>
+    <button onclick="go('menu')">Menu</button>
+    <button onclick="go('about')">About Us</button>
+    <button onclick="go('location')">Location</button>
+    <button onclick="go('contact')">Contact</button>
+  </nav>
+  <div class="actions">
+    <a class="call" data-phone href="#contact">☎️ &nbsp;Call / Order</a>
+    <button class="menu-toggle" onclick="toggleNav()" aria-label="Menu">☰</button>
+  </div>
+</header>
+
+<main>
+<section id="home" class="hero">
+  <div class="hero-content">
+    <div class="eyebrow">🔥 Authentic Nigerian Pepper Soup</div>
+    <div class="kicker">Catpep</div>
+    <h1><span class="gold">Peppersoup</span> & More</h1>
+    <p class="hero-copy">Rich taste. Fresh ingredients. Authentic Nigerian pepper soup, made with love.</p>
+    <div class="features">
+      <div class="feature">🌿<b>Fresh ingredients</b><span>Prepared with care for every order.</span></div>
+      <div class="feature">👨‍🍳<b>Authentic recipe</b><span>Nigerian pepper soup done properly.</span></div>
+      <div class="feature">🔥<b>Hot & flavourful</b><span>Deep spice, warmth and plenty of taste.</span></div>
+      <div class="feature">🛡️<b>Clean & safe</b><span>A kitchen experience you can trust.</span></div>
+    </div>
+    <div class="hero-actions">
+      <a class="primary" href="#menu">🍴 &nbsp;View Menu →</a>
+      <a class="outline" href="https://maps.app.goo.gl/WdWTeVsmWKffZ9n67" target="_blank">📍 &nbsp;Get Directions</a>
+    </div>
+    <div class="quick-actions">
+      <a class="outline whatsapp" data-wa="Hi Catpep, I'd like to place an order." href="#contact">💬 &nbsp;Order on WhatsApp</a>
+      <a class="outline phone" data-phone href="#contact">☎️ &nbsp;Call to Order</a>
+    </div>
+  </div>
+  <div class="hero-note">The real<br>pepper soup<br>experience<div class="arrow">↙</div></div>
+</section>
+
+<section id="menu" class="menu-section">
+  <div class="shell">
+    <div class="heading">
+      <div><div class="line"></div><p class="label">OUR MENU</p><h2>Good food. <span class="gold">Good vibes.</span></h2><p>Freshly prepared favourites for a proper pepper soup fix.</p></div>
+      <a class="text-link" href="#contact">Ask about today’s options →</a>
+    </div>
+    <div class="cards">
+      <article class="card"><div class="food-img"><span class="badge">Customer favourite</span></div><div class="card-body"><p class="num">01</p><h3>Assorted Meat Pepper Soup</h3><p>Goat meat, beef, cow skin and a rich peppery broth.</p><button onclick="go('contact')">→</button></div></article>
+      <article class="card"><div class="food-img"><span class="badge">Classic</span></div><div class="card-body"><p class="num">02</p><h3>Goat Meat Pepper Soup</h3><p>Tender goat meat simmered in a rich, aromatic pepper broth.</p><button onclick="go('contact')">→</button></div></article>
+      <article class="card"><div class="food-img"><span class="badge">Bold & hearty</span></div><div class="card-body"><p class="num">03</p><h3>Beef Pepper Soup</h3><p>Juicy beef, bold flavour and a warming pepper kick.</p><button onclick="go('contact')">→</button></div></article>
+      <article class="card"><div class="food-img"><span class="badge">Rich flavour</span></div><div class="card-body"><p class="num">04</p><h3>Cow Skin Pepper Soup</h3><p>Soft, tasty and satisfying with Catpep’s signature spice.</p><button onclick="go('contact')">→</button></div></article>
+    </div>
+  </div>
+</section>
+
+<section id="about" class="about">
+  <div class="shell about-inner">
+    <div class="about-copy"><p class="label">WHY CATPEP</p><h2>That peppery warmth you <span class="gold">keep coming back for.</span></h2><p>Catpep Peppersoup & More is all about rich Nigerian flavours, generous portions and a satisfying bowl that feels right from the first spoonful to the last.</p>
+      <div class="stats"><div><b>01</b><span>Freshly prepared</span></div><div><b>02</b><span>Authentic flavour</span></div><div><b>03</b><span>FUTA West Gate</span></div></div>
+    </div>
+    <div class="quote"><div class="big">🔥</div><p>“Come hungry. Leave happy.”</p><small>— Catpep Peppersoup & More</small></div>
+  </div>
+</section>
+
+<section id="location" class="location-section">
+  <div class="shell">
+    <div class="location-card">
+      <div class="location-copy"><p class="label">FIND US</p><h2>Right by <span class="gold">FUTA West Gate.</span></h2><p>FUTA West Gate, Akure, Ondo State.</p>
+      <div class="hours">
+        <div class="hours-title">Opening hours</div>
+        <div class="hours-row"><span>Monday – Sunday</span><span>Hours vary</span></div>
+        <div class="hours-row"><span>Order status</span><span>Ask on WhatsApp</span></div>
+      </div>
+      <a class="primary" href="https://maps.app.goo.gl/WdWTeVsmWKffZ9n67" target="_blank">📍 &nbsp;Open in Google Maps →</a></div>
+      <div class="map"><div class="road r1"></div><div class="road r2"></div><div class="pin">📍</div><div class="map-label">Catpep<br><small>Peppersoup & More</small></div><div class="campus">Federal University<br>of Technology Akure</div></div>
+    </div>
+  </div>
+</section>
+
+<section id="contact" class="contact">
+  <div class="shell contact-inner">
+    <div><p class="label">READY TO EAT?</p><h2>Let’s get your <span>order started.</span></h2><p>Visit us at FUTA West Gate or reach out for today’s menu and ordering details.</p></div>
+    <div class="contact-actions">
+      <a class="primary" data-wa="Hi Catpep, I'd like to place an order." href="#contact">💬 &nbsp;Order on WhatsApp</a>
+      <a class="outline" data-phone href="#contact">☎️ &nbsp;Call to Order</a>
+      <a class="outline" href="https://maps.app.goo.gl/WdWTeVsmWKffZ9n67" target="_blank">📍 &nbsp;Get Directions</a>
+      <a class="outline" href="#menu">🍴 &nbsp;Browse Menu</a>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="shell footer-inner">
+    <a class="logo" href="#home"><span class="pepper">🌶️</span><span><strong>Catpep</strong><small>PEPPERSOUP & MORE</small></span></a>
+    <div class="footer-item">🕒 <span><strong>Open daily</strong><small>Hours may vary</small></span></div>
+    <div class="footer-item">📍 <span><strong>FUTA West Gate, Akure</strong><small>Ondo State, Nigeria</small></span></div>
+    <div class="footer-link"><a data-wa="Hi Catpep, I'd like to place an order." href="#contact">WhatsApp</a> &nbsp;·&nbsp; <a data-phone href="#contact">Call</a> &nbsp;·&nbsp; <a href="https://maps.app.goo.gl/WdWTeVsmWKffZ9n67" target="_blank">Google Maps →</a></div>
+  </div>
+</footer>
+
+
+<script>
+/*
+  CATPEP CONTACT SETTINGS
+  Replace WHATSAPP_NUMBER with the restaurant's real Nigerian WhatsApp number:
+  e.g. "2348012345678" (country code first, no +, spaces or leading 0).
+  Replace PHONE_NUMBER with the same/real phone number in tel: format.
+*/
+const WHATSAPP_NUMBER = "";
+const PHONE_NUMBER = "";
+
+function waLink(message="Hi Catpep, I'd like to place an order.") {
+  if (!WHATSAPP_NUMBER) return "#contact";
+  return "https://wa.me/" + WHATSAPP_NUMBER + "?text=" + encodeURIComponent(message);
+}
+function phoneLink() {
+  return PHONE_NUMBER ? "tel:" + PHONE_NUMBER : "#contact";
+}
+function setupContactLinks(){
+  document.querySelectorAll("[data-wa]").forEach(a => {
+    a.href = waLink(a.dataset.wa || undefined);
+    if (WHATSAPP_NUMBER) a.target = "_blank";
+  });
+  document.querySelectorAll("[data-phone]").forEach(a => a.href = phoneLink());
+}
+</script>
+
+
+<div class="mobile-order-bar" aria-label="Quick order actions">
+  <a class="wa" data-wa="Hi Catpep, I'd like to place an order." href="#contact">💬 WhatsApp Order</a>
+  <a class="callnow" data-phone href="#contact">☎️ Call to Order</a>
+</div>
+
+<script>
+setupContactLinks();
+function go(id){document.getElementById(id).scrollIntoView({behavior:'smooth'});document.getElementById('nav').classList.remove('open')}
+function toggleNav(){document.getElementById('nav').classList.toggle('open')}
+window.addEventListener('scroll',()=>{
+  const ids=['home','menu','about','location','contact'];
+  let current='home';
+  ids.forEach(id=>{const el=document.getElementById(id);if(el && window.scrollY>=el.offsetTop-140)current=id});
+  document.querySelectorAll('nav button').forEach((b,i)=>b.classList.toggle('active',ids[i]===current));
+});
+</script>
+</body>
+</html>
